@@ -1,0 +1,19 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  creationTimestamp: null
+  name: simplenode
+spec:
+  gateways:
+  - public-gateway.istio-system
+  - mesh
+  hosts:
+  - simplenode.keptnsample-prod.104.198.161.237.nip.io
+  - simplenode
+  http:
+  - route:
+    - destination:
+        host: simplenode-canary.keptnsample-prod.svc.cluster.local
+    - destination:
+        host: simplenode-primary.keptnsample-prod.svc.cluster.local
+      weight: 100

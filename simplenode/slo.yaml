@@ -8,7 +8,7 @@ objectives:
   - sli: response_time_p95
     pass:        # pass if (relative change <= 10% AND absolute value is < 500)
       - criteria:
-          - "<=+10%" # relative values require a prefixed sign (plus or minus)
+          - "<=+50%" # relative values require a prefixed sign (plus or minus)
           - "<600"   # absolute values only require a logical operator
     warning:     # if the response time is below 800ms, the result should be a warning
       - criteria:
@@ -29,42 +29,42 @@ objectives:
   - sli: response_time_p90
     pass:
       - criteria:
-          - "<=+10%"
+          - "<=+50%"
     warning:
       - criteria:
-          - "<=+10%"
+          - "<=+50%"
   - sli: rt_test_invoke
     pass:
       - criteria:
-          - "<=+10%"
+          - "<=+50%"
   - sli: rt_test_echo
     pass:
       - criteria:
-          - "<=+10%"
+          - "<=+50%"
   - sli: rt_test_version
     pass:
         - criteria:
-          - "<=+10%"
+          - "<=+50%"
   - sli: rt_test_homepage
     pass:
         - criteria:
-          - "<=+10%"
+          - "<=+50%"
   - sli: svcalls_test_invoke
     pass:
       - criteria:
-          - "<=+10%"
+          - "<=+50%"
   - sli: svcalls_test_echo
     pass:
       - criteria:
-          - "<=+10%"
+          - "<=+50%"
   - sli: svcalls_test_version
     pass:
         - criteria:
-          - "<=+10%"
+          - "<=+50%"
   - sli: svcalls_test_homepage
     pass:
         - criteria:
-          - "<=+10%"
+          - "<=+50%"
 total_score:
   pass: "90%"
   warning: "75%"
